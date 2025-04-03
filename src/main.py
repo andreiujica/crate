@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.routing import APIRoute, APIWebSocketRoute
+from fastapi.routing import APIRoute
 
 from src.api.health import router as health_router
 from src.settings import settings
@@ -18,7 +18,7 @@ def get_application() -> FastAPI:
     # Add routers
     for router in [health_router]:
         app.include_router(router)
-        
+
         # Log the routes that have been added
         for route in router.routes:
             if isinstance(route, APIRoute):
