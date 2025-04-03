@@ -22,9 +22,11 @@ jobs:
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
-      - name: Install dependencies
+  
+      - name: Activate venv and install deps
         run: |
+          uv venv
+          source .venv/bin/activate
           uv pip install -r pyproject.toml --extra dev
 
       - name: Lint with ruff
