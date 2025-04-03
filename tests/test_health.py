@@ -1,7 +1,8 @@
 from fastapi import status
+from fastapi.testclient import TestClient
 
 
-def test_health_endpoint(client):
+def test_health_endpoint(client: TestClient) -> None:
     """
     Test the health endpoint returns 200 OK and the expected response.
     """

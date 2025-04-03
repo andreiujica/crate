@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install -r pyproject.toml
+          uv pip install -e ".[dev]"
 
       - name: Lint with ruff
         run: |

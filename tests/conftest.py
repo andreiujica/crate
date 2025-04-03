@@ -5,7 +5,7 @@ from src.main import application
 
 
 @pytest.fixture
-def client():
+def client() -> TestClient:
     """
     Create a test client for the FastAPI application.
     """
