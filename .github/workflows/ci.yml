@@ -26,8 +26,7 @@ jobs:
       - name: Activate venv and install deps
         run: |
           uv venv
-          source .venv/bin/activate
-          uv pip install -r pyproject.toml --extra dev
+          uv sync --extra dev
 
       - name: Lint with ruff
         run: |
